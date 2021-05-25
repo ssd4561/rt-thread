@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  *
  * @Date: 2021-04-07 09:53:07
- * @LastEditTime: 2021-04-07 13:23:19
+ * @LastEditTime: 2021-05-25 10:46:57
  * @Description:  This files is for gmac ctrl
  *
  * @Modify History:
@@ -103,40 +103,6 @@ s32 Ft_Gmac_Stop(Ft_Gmac_t *Gmac)
 
 void Ft_Gmac_Phy_Debug(Ft_Gmac_t *Gmac)
 {
-    // FGmac_Config_t *Config;
-    // Config = &Gmac->Config;
-    // Gmac_WritePHYRegister(Config, PHY_DEBUG_ADDR_OFFSET, 0x12);
-    // FGmac_ReadPHYRegister(Config, PHY_DEBUG_DATA_OFFSET, &RegValue);
-
-    // Ft_printf("PHY_DEBUG_OFFSET 0x12 %x \r\n", RegValue);
-    // Ft_assertVoid(Gmac_WritePHYRegister(Config, PHY_DEBUG_ADDR_OFFSET, 0x10) == FST_SUCCESS);
-    // Ft_assertVoid(FGmac_ReadPHYRegister(Config, 0x1f, &RegValue) == FST_SUCCESS);
-    // Ft_printf("chip  check 0x1f %x \r\n", RegValue);
-    // Ft_printf("chip  check GMAC_CONTROL_OFFSET %x \r\n", Ft_in32(Config->BaseAddress + GMAC_CONTROL_OFFSET));
-
-    // Ft_printf("MAC 配置寄存器 %x \r\n", Ft_in32(Config->BaseAddress + GMAC_CONTROL_OFFSET));
-    // Ft_printf("中断状态寄存器 %x \r\n", Ft_in32(Config->BaseAddress + GMAC_ISR_STATUS_OFFSET));
-    // Ft_printf("中断屏蔽寄存器 %x \r\n", Ft_in32(Config->BaseAddress + GMAC_ISR_MASK_OFFSET));
-    // Ft_printf("寄存器 54 %x \r\n", Ft_in32(Config->BaseAddress + GMAC_MAC_MAC_PHY_STATUS));
-
-    // Ft_printf("DMA 总线模式寄存器 %x \r\n", Ft_in32(Config->BaseAddress + DMA_BUS_MODE_OFFSET));
-    // Ft_printf("DMA 状态寄存器 %x \r\n", Ft_in32(Config->BaseAddress + DMA_STATUS_OFFSET));
-    // Ft_printf("DMA 操作模式寄存器 %x \r\n", Ft_in32(Config->BaseAddress + DMA_OP_OFFSET));
-    // Ft_printf("DMA 中断使能寄存器 %x \r\n", Ft_in32(Config->BaseAddress + DMA_INTR_ENA_OFFSET));
-    // Ft_printf("DMA 中断遮蔽寄存器 %x \r\n", Ft_in32(Config->BaseAddress + DMA_MISSED_FRAME_CTR_OFFSET));
-    // Ft_printf("DMA AXI 总线模式寄存器 %x \r\n", Ft_in32(Config->BaseAddress + DMA_AXI_BUS_MOD_OFFSET));
-    // Ft_printf("DMA  AXI 状态寄存器 %x \r\n", Ft_in32(Config->BaseAddress + DMA_AXI_BUS_STATUS_OFFSET));
-    // Ft_printf("接收描述符列表地址寄存器 %x \r\n", Ft_in32(Config->BaseAddress + DMA_RCV_BASE_ADDR_OFFSET));
-    // Ft_printf("发送描述符列表地址寄存器 %x \r\n", Ft_in32(Config->BaseAddress + DMA_TX_BASE_ADDR_OFFSET));
-
-    // Ft_printf("当前主机接收描述符寄存器 %x \r\n", Ft_in32(Config->BaseAddress + 0x104c));
-    // Ft_printf("当前接收缓冲区地址 %x \r\n", Ft_in32(Config->BaseAddress + 0x1054));
-
-    // Ft_printf("当前主机发送描述符寄存器 %x \r\n", Ft_in32(Config->BaseAddress + 0x1048));
-    // Ft_printf("当前发送缓冲区地址 %x \r\n", Ft_in32(Config->BaseAddress + 0x1050));
-
-    // Ft_printf("接收描述符列表地址寄存器 %x \r\n", Ft_in32(Config->BaseAddress + DMA_RCV_BASE_ADDR_OFFSET));
-    // Ft_printf("发送描述符列表地址寄存器 %x \r\n", Ft_in32(Config->BaseAddress + DMA_TX_BASE_ADDR_OFFSET));
 
     Ft_printf("\r\n ****************************** \r\n");
 }

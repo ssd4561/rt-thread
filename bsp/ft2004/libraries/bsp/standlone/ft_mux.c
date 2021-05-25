@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  *
  * @Date: 2021-04-07 09:53:07
- * @LastEditTime: 2021-04-27 17:28:42
+ * @LastEditTime: 2021-05-25 10:51:59
  * @Description:  This files is for pin mux
  *
  * @Modify History:
@@ -67,11 +67,6 @@ void Ft_setSpiMux(FT_IN u32 SpiId)
         Ft_out32(FT_PIN_DEMUX_BASE + FT_PIN_DEMUX_REG208_OFFSET, RegValue);
         Ft_printf("bef reg 208 0x%x\r\n", Ft_in32(FT_PIN_DEMUX_BASE + FT_PIN_DEMUX_REG208_OFFSET));
 
-        // RegValue &= SPI0_CSN0_PIN_REG208_BIT;
-        // RegValue &= SPI0_SCK_PIN_REG208_BIT;
-        // RegValue &= SPI0_SO_PIN_REG208_BIT;
-        // RegValue &= SPI0_SI_PIN_REG208_BIT;
-        // Ft_out32(FT_PIN_DEMUX_BASE + SPI0_SI_PIN_REG208_BIT, RegValue);
         break;
     case SPI1_ID:
         /* select spi cs, sck, so, si pin mux */

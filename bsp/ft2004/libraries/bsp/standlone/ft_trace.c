@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  *
  * @Date: 2021-04-15 11:27:24
- * @LastEditTime: 2021-04-26 17:24:53
+ * @LastEditTime: 2021-05-25 10:52:32
  * @Description:  This files is for
  *
  * @Modify History:
@@ -12,25 +12,14 @@
  * ----- ------     --------    --------------------------------------
  */
 
-//#include "FreeRTOS.h"
-//#include "task.h"
+
 #include "ft_trace.h"
 #include "ft_printf.h"
 
-// typedef struct MEMBLOCK_LINK
-// {
-//     struct MEMBLOCK_LINK *pxNextFreeBlock; /*<< The next free block in the list. */
-//     size_t xBlockSize;                    /*<< The size of the free block. */
-// } MEMBlockLink_t;
+
 void Sdmmc_TraceHeapAlloc(const char *tag)
 {
-    // #ifdef FT_MEM_TRACE_ENABLED
-    //     MEMBlockLink_t *pNextBlk = pvHeapAllocAddr();
-    //     FT_MEM_TRACE("<%s> next blk to alloc 0x%p, next next blk to alloc 0x%p",
-    //         tag,
-    //         pNextBlk,
-    //         pNextBlk->pxNextFreeBlock);
-    // #endif
+
 }
 
 void dump_hex(const u8 *ptr, u32 buflen, const char *tag)

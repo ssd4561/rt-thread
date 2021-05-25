@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  *
  * @Date: 2021-04-20 11:32:32
- * @LastEditTime: 2021-04-20 11:32:32
+ * @LastEditTime: 2021-05-25 10:51:19
  * @Description:  Description of file
  * @Modify History:
  * * * Ver   Who        Date         Changes
@@ -72,8 +72,7 @@ s32 FCpu_AffinityGet(void)
     __asm__ volatile(
         "mrc p15, 0, %0, c0, c0, 5"
         : "=r"(AffinityId));
-    // Ft_printf("error cpu_id %x \r\n", cpu_id);
-    // cpu_id &= 0xf;
+
     return AffinityId & 0xfff;
 }
 

@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  *
  * @Date: 2021-04-07 09:53:07
- * @LastEditTime: 2021-04-26 11:25:56
+ * @LastEditTime: 2021-05-25 10:51:35
  * @Description:  This files is for generic timer functions
  *
  * @Modify History:
@@ -305,10 +305,9 @@ u32 Ft_GenericTimer_Msec(void)
 void Ft_GenericTimer_Init(FT_IN u8 UseVirtual, FT_IN Ft_GenericTimer_Isr_Callback Callback)
 {
     Ft_GenericTimer_Handler.Frequency = arm_aarch32_cntfrq_get();
-    // Ft_printf("CPU id %x \r\n", FCpu_IdGet());
 
     Ft_GenericTimer_Handler.TicksPerUs = Ft_GenericTimer_Handler.Frequency / 1000000;
-    // Ft_printf("TicksPerUs %d \r\n", Ft_GenericTimer_Handler.TicksPerUs);
+
     Ft_GenericTimer_Handler.MaxCount = 0xffffffffffffffffull;
     Ft_GenericTimer_Handler.Callback = Callback;
     Ft_GenericTimer_Handler.UseVirtual = UseVirtual;

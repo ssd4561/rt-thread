@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  *
  * @Date: 2021-04-07 09:53:07
- * @LastEditTime: 2021-04-27 15:46:38
+ * @LastEditTime: 2021-05-25 10:48:27
  * @Description:  This files is for i2c user interface
  *
  * @Modify History:
@@ -488,7 +488,7 @@ u32 FI2C_readByFifo(FT_IN u8 PageAddr, FT_INOUT FI2C_t *pDev)
     FI2C_setIrq(pDev, I2C_IRQ_RX_FULL, TRUE);
     FI2C_setIrq(pDev, I2C_IRQ_TX_EMPTY, FALSE);
     FI2C_SET_RX_TL(pDev, 1);
-    //FT_MIN(pDev->RxBuf.DataLength, FI2C_GET_RX_BUFFER_DEPTH(pDev)));
+
     pDev->DelayHandle(2);
     FT_I2C_DEBUG_I("rx tl is 0x%x irq mask 0x%x",
                    FI2C_GET_RX_TL(pDev),

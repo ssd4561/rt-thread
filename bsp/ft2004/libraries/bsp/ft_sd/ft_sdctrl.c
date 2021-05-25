@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  *
  * @Date: 2021-03-31 14:59:20
- * @LastEditTime: 2021-04-15 13:57:52
+ * @LastEditTime: 2021-05-25 10:49:25
  * @Description:  This files is for implemenation of sd ctrl
  *
  * @Modify History: * * Ver   Who        Date         Changes
@@ -677,7 +677,6 @@ u32 FSdCtrl_GetNormalIrqStatus(FT_INOUT FtsdCtrl_t *pFtsdCtrl)
     Ft_assertNonvoid(FT_NULL != pFtsdCtrl);
     FSdCtrl_Config_t *pConfig;
     pConfig = &pFtsdCtrl->config;
-    // rt_kprintf("FSdCtrl_GetNormalIrqStatus is in \r\n");
     return Ft_in32(pConfig->baseAddress + NORMAL_INT_STATUS_REG);
 }
 

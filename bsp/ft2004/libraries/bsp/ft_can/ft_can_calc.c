@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  *
  * @Date: 2021-05-06 09:30:51
- * @LastEditTime: 2021-05-24 14:30:45
+ * @LastEditTime: 2021-05-25 10:45:56
  * @Description:  Description of file
  * @Modify History:
  * * * Ver   Who        Date         Changes
@@ -229,14 +229,10 @@ ft_error_t FCan_CalcBittiming(struct FCan_Bittiming *Bt_p)
         bitrate_error = (u32)v64;
         if (bitrate_error > CAN_CALC_MAX_ERROR)
         {
-            // FTCAN_LOGMSG("bitrate error %d.%d%% too high\n",
-            //              bitrate_error / 10, bitrate_error % 10, 3, 4, 5, 6);
             FT_CAN_DEBUG_E("bitrate error");
         }
         return FCAN_FAILURE;
         FT_CAN_DEBUG_E("bitrate error 2");
-        // FTCAN_LOGMSG("bitrate error %d.%d%%\n",
-        //              bitrate_error / 10, bitrate_error % 10, 3, 4, 5, 6);
     }
 
     /* real sample point */

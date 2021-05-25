@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  *
  * @Date: 2021-04-07 09:53:07
- * @LastEditTime: 2021-05-18 17:58:33
+ * @LastEditTime: 2021-05-25 10:46:16
  * @Description:  This files is for gmac description
  *
  * @Modify History:
@@ -127,85 +127,6 @@ s32 FGmac_DmaTxDescRingInit(Ft_Gmac_t *Gmac, FGmac_DmaDesc_t *DMATxDescTab, u8 *
     Ft_out32(Gmac->Config.BaseAddress + DMA_TX_BASE_ADDR_OFFSET, (u32)DMATxDescTab);
     return FST_SUCCESS;
 }
-
-// static s32 FGmac_transmitframe(Ft_Gmac_t *Gmac, uint32_t FrameLength)
-// {
-//     u32 Size = 0U;
-//     u32 i = 0U;
-//     u32 BufCount = 0U;
-
-//     if (0U == FrameLength)
-//     {
-//         return FST_SUCCESS;
-//     }
-
-//     if ((Gmac->TxDesc->Status & DMA_TDES0_OWN) == DMA_TDES0_OWN)
-//     {
-//         return FST_FAILURE;
-//     }
-
-//     if (FrameLength > GMAC_MAX_PACKET_SIZE)
-//     {
-//         BufCount = FrameLength / GMAC_MAX_PACKET_SIZE;
-//         if (FrameLength % GMAC_MAX_PACKET_SIZE)
-//         {
-//             BufCount++;
-//         }
-//     }
-//     else
-//     {
-//         BufCount = 1U;
-//     }
-
-//     if (BufCount == 1U)
-//     {
-//         /* Set LAST and FIRST segment */
-//         Gmac->TxDesc->Control |= DMA_TDES1_FIRST_SEGMENT | DMA_TDES1_LAST_SEGMENT;
-//         /* Set frame size */
-//         Gmac->TxDesc->Control &= ~(DMA_TDES1_BUFFER1_SIZE_MASK);
-//         Gmac->TxDesc->Control |= (FrameLength & DMA_TDES1_BUFFER1_SIZE_MASK);
-//         /* Set Own bit of the Tx descriptor Status: gives the buffer back to ETHERNET DMA */
-//         Gmac->TxDesc->Status |= (DMA_TDES0_OWN);
-//         /* Point to next descriptor */
-//         Gmac->TxDesc = (FGmac_DmaDesc_t *)(Gmac->TxDesc->Buffer2NextDescAddr);
-//     }
-//     else
-//     {
-//         for (i = 0U; i < BufCount; i++)
-//         {
-//             /* Clear FIRST and LAST segment bits */
-//             Gmac->TxDesc->Control &= ~(DMA_TDES1_FIRST_SEGMENT | DMA_TDES1_LAST_SEGMENT);
-
-//             if (i == 0U)
-//             {
-//                 /* Setting the first segment bit */
-//                 Gmac->TxDesc->Control |= DMA_TDES1_FIRST_SEGMENT;
-//             }
-
-//             /* Program size */
-//             Gmac->TxDesc->Control &= ~(DMA_TDES1_BUFFER1_SIZE_MASK);
-//             Gmac->TxDesc->Control |= (GMAC_MAX_PACKET_SIZE & DMA_TDES1_BUFFER1_SIZE_MASK);
-
-//             if (i == (BufCount - 1U))
-//             {
-//                 /* Setting the last segment bit */
-//                 Gmac->TxDesc->Control |= DMA_TDES1_LAST_SEGMENT;
-//                 Size = FrameLength - (BufCount - 1U) * GMAC_MAX_PACKET_SIZE;
-//                 Gmac->TxDesc->Control &= ~(DMA_TDES1_BUFFER1_SIZE_MASK);
-//                 Gmac->TxDesc->Control |= (Size & DMA_TDES1_BUFFER1_SIZE_MASK);
-//             }
-
-//             /* Set Own bit of the Tx descriptor Status: gives the buffer back to ETHERNET DMA */
-//             Gmac->TxDesc->Status |= (DMA_TDES0_OWN);
-//             /* point to next descriptor */
-//             Gmac->TxDesc = (FGmac_DmaDesc_t *)(Gmac->TxDesc->Buffer2NextDescAddr);
-//         }
-//     }
-
-//     FGmac_ResumeTransmission(Gmac);
-
-//     return FST_SUCCESS;
-// }
 
 s32 FGmac_TransmitframeRingPoll(Ft_Gmac_t *Gmac, uint32_t FrameLength)
 {

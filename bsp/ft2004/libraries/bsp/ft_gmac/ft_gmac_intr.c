@@ -177,8 +177,7 @@ void FGmac_IntrHandler(void *Args)
     {
         Ft_printf("DMA_STATUS_TI %x \r\n", RegValue);
         Ft_printf("ti debug %x \r\n", Ft_in32(Gmac->Config.BaseAddress + GMAC_INTERNAL_MODULE_STATUS_OFFSET));
-        // if (Gmac->SendHandler)
-        //     Gmac->SendHandler(Gmac->SendArgs);
+
         Ft_out32(Gmac->Config.BaseAddress + DMA_STATUS_OFFSET, DMA_STATUS_TI);
     }
 

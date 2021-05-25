@@ -671,8 +671,6 @@ static int rt_hw_gmac_init(struct drv_gmac *pOsMac, const char *name)
         return -RT_ERROR;
     }
 
-    // pOsMac->_debug_tid = rt_thread_create(name, rt_hw_gmac_test, pOsMac, 512, 1, 2);
-    // rt_thread_startup(pOsMac->_debug_tid);
     return RT_EOK;
 }
 

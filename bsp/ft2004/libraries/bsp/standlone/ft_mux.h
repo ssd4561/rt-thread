@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  *
  * @Date: 2021-04-07 09:53:07
- * @LastEditTime: 2021-04-27 17:27:41
+ * @LastEditTime: 2021-05-25 10:52:06
  * @Description:  This files is for pin mux
  *
  * @Modify History:
@@ -44,11 +44,8 @@ extern "C"
 #define I2C3_SDA_PIN_REG208_MASK ((u32)0x3 << 30) /* hdt_mb_fail_state_pad [31 : 30] */
 #define I2C3_SDA_PIN_REG208_BIT ((u32)0x2 << 30)
 
-//#define SPI0_CSN0_PIN_REG208_BIT             ((u32)~(0x3 << 16))
+
 #define SPI1_PORTA5_PIN_REG208_BIT ((u32)0x1 << 16)
-    // #define SPI0_SCK_PIN_REG208_BIT              ((u32)~(0x3 << 12))
-    // #define SPI0_SO_PIN_REG208_BIT               ((u32)~(0x3 << 8))
-    // #define SPI0_SI_PIN_REG208_BIT               ((u32)~(0x3 << 4))
 
 #define SPI1_CSN0_PIN_REG210_MASK ((u32)0x3 << 0) /* uart_2_rxd_pad [1 : 0] */
 #define SPI1_CSN0_PIN_REG210_BIT ((u32)0x1 << 0)

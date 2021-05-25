@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  *
  * @Date: 2021-04-07 09:53:07
- * @LastEditTime: 2021-04-07 13:26:04
+ * @LastEditTime: 2021-05-25 10:46:50
  * @Description:  This files is for gmac static init
  *
  * @Modify History:
